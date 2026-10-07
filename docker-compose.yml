@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: autofix-mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: autofix123
+      MYSQL_DATABASE: autofix
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - autofix_data:/var/lib/mysql
+
+volumes:
+  autofix_data:
